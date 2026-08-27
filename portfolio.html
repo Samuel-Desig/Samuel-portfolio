@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel — Web Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2340;
+    --butter:#F4C430;
+    --cream:#FBF6ED;
+    --charcoal:#24262E;
+    --line: rgba(36,38,46,0.1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Work Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; letter-spacing:-0.01em;}
+  a{color:inherit; text-decoration:none;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+
+  nav{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:26px 6vw;
+  }
+  .logo{font-family:'Fraunces', serif; font-weight:600; font-size:1.25rem; display:flex; align-items:center; gap:8px;}
+  .logo .dot{color:var(--butter); font-size:1.5rem; line-height:0;}
+  .nav-links{display:flex; gap:24px; font-size:0.88rem; color:#5b5d68;}
+  @media (max-width:600px){.nav-links{display:none;}}
+
+  .hero{padding:70px 6vw 100px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; text-transform:uppercase;
+    letter-spacing:0.08em; color:#8B5E3C; margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--butter); box-shadow:0 0 0 4px rgba(244,196,48,0.18);}
+  .hero h1{font-size:clamp(2.4rem, 5.5vw, 4rem); line-height:1.08; max-width:16ch;}
+  .hero h1 em{font-style:italic; font-weight:500; color:#8B5E3C;}
+  .hero p{margin-top:24px; font-size:1.08rem; line-height:1.65; max-width:52ch; color:#5b5d68;}
+  .hero-actions{margin-top:32px; display:flex; gap:14px; flex-wrap:wrap;}
+  .btn-primary{background:var(--ink); color:var(--cream); padding:14px 26px; border-radius:100px; font-weight:600; font-size:0.92rem;}
+  .btn-ghost{border:1px solid rgba(36,38,46,0.2); padding:14px 26px; border-radius:100px; font-weight:600; font-size:0.92rem;}
+
+  section{padding:80px 6vw;}
+  .section-head{margin-bottom:50px;}
+  .kicker{
+    font-family:'IBM Plex Mono', monospace; font-size:0.76rem; text-transform:uppercase;
+    letter-spacing:0.08em; color:#8B5E3C; margin-bottom:12px; display:block;
+  }
+  .section-head h2{font-size:clamp(1.8rem, 3vw, 2.4rem);}
+
+  .work-grid{display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
+  .work-card{
+    background:var(--cream);
+    display:grid; grid-template-columns:1fr 1.3fr;
+    align-items:stretch;
+  }
+  @media (max-width:800px){.work-card{grid-template-columns:1fr;}}
+  .work-shot{
+    min-height:280px;
+    background-size:cover; background-position:top center;
+    position:relative;
+  }
+  .work-shot .tag{
+    position:absolute; top:18px; left:18px;
+    background:rgba(27,35,64,0.85); color:var(--cream);
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem;
+    padding:6px 12px; border-radius:100px;
+  }
+  .work-info{padding:44px 40px; display:flex; flex-direction:column; gap:14px; justify-content:center;}
+  .work-info h3{font-size:1.5rem;}
+  .work-info p{font-size:0.95rem; color:#5b5d68; line-height:1.6; max-width:42ch;}
+  .work-info .view-link{
+    margin-top:8px; display:inline-flex; align-items:center; gap:8px;
+    font-weight:600; font-size:0.92rem; color:var(--ink);
+    width:fit-content; border-bottom:1px solid var(--ink); padding-bottom:2px;
+  }
+  .work-info .view-link:hover{color:#8B5E3C; border-color:#8B5E3C;}
+
+  .about{background:var(--ink); color:var(--cream);}
+  .about-inner{max-width:700px;}
+  .about p{font-size:1.05rem; line-height:1.7; color:rgba(251,246,237,0.82);}
+  .about p + p{margin-top:18px;}
+
+  .contact{text-align:center;}
+  .contact h2{font-size:clamp(1.8rem, 3.4vw, 2.6rem); max-width:16ch; margin:0 auto 20px;}
+  .contact p{color:#5b5d68; max-width:40ch; margin:0 auto 30px;}
+  .contact .btn-primary{margin:0 auto;}
+
+  footer{
+    padding:34px 6vw; display:flex; justify-content:space-between; align-items:center;
+    font-size:0.82rem; color:#8a8c96; border-top:1px solid var(--line);
+    flex-wrap:wrap; gap:10px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span class="dot">•</span>Samuel</div>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Web designer</div>
+  <h1>I design websites for small businesses that <em>deserve better</em> than a template.</h1>
+  <p>I build clean, fast, mobile-friendly sites — the kind that make a small business look as good online as it does in person. Below are two sample projects showing the range I can bring to a real one.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#work">See the work</a>
+    <a class="btn-ghost" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<section id="work">
+  <div class="section-head">
+    <span class="kicker">Selected work</span>
+    <h2>Sample projects</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-shot" style="background-image:url('https://images.unsplash.com/photo-1774669081553-4ef841520c05?fm=jpg&q=75&w=1200&auto=format&fit=crop');">
+        <span class="tag">Bakery</span>
+      </div>
+      <div class="work-info">
+        <h3>Little Loaf</h3>
+        <p>A neighborhood sourdough bakery site built around a "baked before dawn" concept, with a signature production-schedule timeline showing the day's bake in real time.</p>
+        <a class="view-link" href="little-loaf.html">View project →</a>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-shot" style="background-image:url('https://images.unsplash.com/photo-1704455306251-b4634215d98f?fm=jpg&q=75&w=1200&auto=format&fit=crop');">
+        <span class="tag">Dental practice</span>
+      </div>
+      <div class="work-info">
+        <h3>Willow &amp; Ives</h3>
+        <p>A calming, non-clinical site for a family dental practice, with a step-by-step "first visit" walkthrough designed to ease new-patient anxiety before they even book.</p>
+        <a class="view-link" href="willow-ives-dental.html">View project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <span class="kicker" style="color:var(--butter);">About</span>
+    <h2 style="margin-bottom:20px;">A little about me</h2>
+    <p>I'm Samuel, a web designer focused on helping small, local businesses get a website that actually represents them — not a generic template. I build every site to be fast, mobile-friendly, and easy for the owner to keep up-to-date.</p>
+    <p>If your current site is outdated, hard to use on a phone, or just doesn't exist yet, I'd love to help you fix that.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <span class="kicker" style="text-align:center; display:block;">Get in touch</span>
+  <h2>Have a site that needs work?</h2>
+  <p>Send me a message and I'll put together a free sample page for your business — no obligation.</p>
+  <a class="btn-primary" href="mailto:your-email@example.com">your-email@example.com</a>
+</section>
+
+<footer>
+  <div>Samuel — Web Designer</div>
+  <div>Portfolio · 2026</div>
+</footer>
+
+</body>
+</html>
