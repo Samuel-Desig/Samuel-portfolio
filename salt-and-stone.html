@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt & Stone — Spa & Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#8B9A82;
+    --sand:#EDE6DA;
+    --clay:#8B5E3C;
+    --cream:#FBF9F5;
+    --ink:#33322D;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);color:var(--ink);font-family:'Work Sans',sans-serif;font-weight:300;}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 40px;}
+  .center{text-align:center;}
+
+  header{padding:30px 0;}
+  .nav{display:flex;justify-content:space-between;align-items:center;}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:24px;letter-spacing:1px;}
+  .nav-links{display:flex;gap:40px;font-size:14px;}
+  .nav-links a{opacity:0.7;}
+
+  .hero{padding:70px 0 100px;text-align:center;}
+  .hero .kicker{font-size:13px;letter-spacing:2px;color:var(--clay);margin-bottom:22px;}
+  .hero h1{font-size:64px;line-height:1.1;max-width:680px;margin:0 auto 26px;}
+  .hero p{max-width:440px;margin:0 auto;font-size:16px;opacity:0.75;line-height:1.7;}
+
+  .rings{display:flex;justify-content:center;gap:60px;margin-top:70px;flex-wrap:wrap;}
+  .ring{width:170px;height:170px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:20px;}
+  .ring .t{font-family:'Cormorant Garamond',serif;font-size:19px;}
+  .ring .s{font-size:12px;opacity:0.7;margin-top:6px;}
+
+  section{padding:90px 0;}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  .split-art{height:420px;border-radius:6px;}
+  .split h2{font-size:38px;margin-bottom:20px;}
+  .split p{font-size:15.5px;line-height:1.8;opacity:0.78;max-width:420px;}
+  .split-list{margin-top:28px;display:flex;flex-direction:column;gap:14px;}
+  .split-list div{display:flex;gap:12px;font-size:14.5px;align-items:baseline;}
+  .split-list .dash{width:20px;height:1px;background:var(--clay);margin-top:9px;flex-shrink:0;}
+
+  .treatments{background:var(--sand);}
+  .t-title{font-size:38px;margin-bottom:12px;}
+  .t-sub{opacity:0.7;font-size:15px;margin-bottom:50px;max-width:420px;}
+  .t-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(51,50,45,0.12);}
+  .t-card{background:var(--sand);padding:34px;}
+  .t-card .name{font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:8px;}
+  .t-card .desc{font-size:14px;opacity:0.72;line-height:1.6;margin-bottom:16px;}
+  .t-card .meta{font-size:13px;display:flex;justify-content:space-between;opacity:0.85;border-top:1px solid rgba(51,50,45,0.15);padding-top:14px;}
+
+  .quote{text-align:center;padding:110px 0;}
+  .quote blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:32px;line-height:1.5;max-width:640px;margin:0 auto 20px;}
+  .quote cite{font-size:13px;opacity:0.6;font-style:normal;}
+
+  .cta{background:var(--sage);color:var(--cream);text-align:center;padding:100px 0;}
+  .cta h2{font-size:42px;margin-bottom:26px;}
+  .cta a{display:inline-block;background:var(--cream);color:var(--ink);padding:16px 36px;font-size:14px;border-radius:2px;}
+
+  footer{padding:50px 0;font-size:13px;opacity:0.6;display:flex;justify-content:space-between;}
+
+  @media(max-width:820px){
+    .hero h1{font-size:38px;}
+    .split{grid-template-columns:1fr;gap:36px;}
+    .split-art{height:280px;order:-1;}
+    .t-grid{grid-template-columns:1fr;}
+    .rings{gap:24px;}
+    .ring{width:130px;height:130px;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="nav">
+    <div class="logo">Salt & Stone</div>
+    <nav class="nav-links">
+      <a href="#treatments">Treatments</a>
+      <a href="#studio">Studio</a>
+      <a href="#contact">Book</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero wrap">
+  <div class="kicker">SPA & WELLNESS, EDINBURGH</div>
+  <h1>Slow down. That's the whole treatment.</h1>
+  <p>Salt & Stone is a small spa built around single-therapist care — one room, one guest, no rush between sessions.</p>
+
+  <div class="rings">
+    <div class="ring" style="background:#DCE3D6;"><div class="t">Massage</div><div class="s">45–90 min</div></div>
+    <div class="ring" style="background:#E9DCC8;"><div class="t">Facials</div><div class="s">Botanical, active</div></div>
+    <div class="ring" style="background:#D8CBB8;"><div class="t">Hot stone</div><div class="s">Signature ritual</div></div>
+  </div>
+</section>
+
+<section id="studio">
+  <div class="wrap split">
+    <div class="split-art" style="background:linear-gradient(160deg,#C7B79A,#8B5E3C);"></div>
+    <div>
+      <h2>A studio, not a spa chain</h2>
+      <p>Every treatment is done by one of two therapists who've worked together for six years. No rotating staff, no upselling at the till — just the treatment you booked, done properly.</p>
+      <div class="split-list">
+        <div><div class="dash"></div>Locally made oils and clay, sourced within 40 miles</div>
+        <div><div class="dash"></div>90 minutes between bookings, never back to back</div>
+        <div><div class="dash"></div>A consultation before every first visit</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="treatments" id="treatments">
+  <div class="wrap">
+    <div class="t-title">Treatments</div>
+    <div class="t-sub">A short, considered menu — each treatment designed to be complete on its own.</div>
+    <div class="t-grid">
+      <div class="t-card">
+        <div class="name">Deep Tissue Massage</div>
+        <div class="desc">Firm-pressure bodywork focused on chronic tension through the back, shoulders, and neck.</div>
+        <div class="meta"><span>60 min</span><span>£78</span></div>
+      </div>
+      <div class="t-card">
+        <div class="name">Botanical Facial</div>
+        <div class="desc">A plant-based facial using cold-pressed oils, suited to sensitive and reactive skin.</div>
+        <div class="meta"><span>50 min</span><span>£65</span></div>
+      </div>
+      <div class="t-card">
+        <div class="name">Hot Stone Ritual</div>
+        <div class="desc">Warmed basalt stones combined with long strokes to ease tension without deep pressure.</div>
+        <div class="meta"><span>75 min</span><span>£95</span></div>
+      </div>
+      <div class="t-card">
+        <div class="name">Half-Day Retreat</div>
+        <div class="desc">Massage, facial, and a resting hour with tea — our most-booked combined treatment.</div>
+        <div class="meta"><span>3 hrs</span><span>£190</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <blockquote>"The only appointment in my week I don't reschedule."</blockquote>
+    <cite>— Marion T., client since 2022</cite>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>Book your first visit</h2>
+    <a href="mailto:hello@saltandstonespa.co">Check availability</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Salt & Stone</span>
+  <span>Site design by Samuel</span>
+</footer>
+
+</body>
+</html>
